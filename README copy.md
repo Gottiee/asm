@@ -1,25 +1,28 @@
-# BASIQUE
-___
+------------------DOCU------------------
+
+https://revers.engineering/applied-reverse-engineering-series/ -> tuto asm
+https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/ -> syscall table
+https://fr.wikipedia.org/wiki/RFLAGS -> wiki des flags
+
+
+------------------BASIQUE------------------
+
 
 At&T : instruction like $0x1, %eax
 Intel: instruction eax, 0x1
 
-## Sections
 
-___
+[segments]
+  .bss = variables not initialisees : int a
+  .data = variables initialisees int a = 1;
+  .text = code executable: printf("ok")
 
-  - .bss = variables not initialisees : int a
-  - .data = variables initialisees int a = 1;
-  - .text = code executable: printf("ok")
+------SECTION DATA------
 
-### .data Section 
-
-```asm
   _data db 'db is declare byte', 0xa, 0x0 =>  _data : le nom de notre variable
                                               db    : instruction decalre byte
                                               0xa   : ecrite '\n' a la suite de la string
                                               0x0   : ecrire '\0' a la fin de la string
-```
                                         
 
 ------SECTION CODE------
