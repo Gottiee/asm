@@ -1,31 +1,43 @@
 # BASIQUE
-___
 
-At&T : instruction like $0x1, %eax
+**At&T** : instruction like $0x1, %eax
 
-Intel: instruction eax, 0x1
+**Intel**: instruction eax, 0x1
 
 ## Sections
 
-___
+**.bss** = variables not initialisees : ```int a;```
 
-- .bss = variables not initialisees : int a
-- .data = variables initialisees int a = 1;
-- .text = code executable: printf("ok")
+**.data** = variables initialisees: ```int a = 1;```
+
+**.text** = code executable: ```printf("ok");```
+
+___
 
 ### .data Section 
 
+```section .data```
+Declare a variable:
 ```asm
-_data db 'db is declare byte', 0xa, 0x0 =>_data : le nom de notre variable
-db: instruction decalre byte
-0xa : ecrite '\n' a la suite de la string
-0x0 : ecrire '\0' a la fin de la string
+_data db 'db is declare byte', 0xa, 0x0 
 ```
+**_data** : le nom de notre variable
 
+**db**: instruction decalre byte
 
-------SECTION CODE------
+**0xa** : ecrite '\n' a la suite de la string
 
-[registres]
+**0x0** : ecrire '\0' a la fin de la string
+
+___
+
+### .text Section
+
+```section .text```
+#### Registre 
+
+16bits | 32bits | 64bits | definition
+--- | --- | ---| ---
 ax -> Eax -> rax
 bx -> Ebx -> rbx
 cx -> Ecs -> rcx
