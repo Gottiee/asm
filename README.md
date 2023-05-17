@@ -38,21 +38,21 @@ ___
 
 16bits | 32bits | 64bits | definition
 --- | --- | ---| ---
-ax -> Eax -> rax
-bx -> Ebx -> rbx
-cx -> Ecs -> rcx
-dx -> Edx -> rdx
-si -> Esi -> rsi # src
-di -> Edi -> rsi
-sp -> Esp -> rsp : stack pointer (pointe sur le haut de la stack)
-bp -> Ebp -> rbp
-ip -> eip -> rip : instruction pointer (vers la prochaine action a executer)
+ax | Eax | rax
+bx | Ebx | rbx
+cx | Ecs | rcx
+dx | Edx | rdx
+si | Esi | rsi # src
+di | Edi | rsi
+sp | Esp | rsp | stack pointer (pointe sur le haut de la stack)
+bp | Ebp | rbp
+ip | eip | rip | instruction pointer (vers la prochaine action a executer)
 
 [Instruction] [Operand, Value]
 mov : met une valeur dans un registres (mov rax, 1)
 db : declare un byte
 cmp : compare des valeurs et set le RFLAGS
-lea :move effective adress -> met l'orperand de source dasn dest 
+lea :move effective adress | met l'orperand de source dasn dest 
 
 ------------------JUMP / IF------------------
 
@@ -74,19 +74,19 @@ above/below == unsigned; unsigned int a ;
 ------------------FLAGS------------------
 
 [type]
-FLAGS(16bit) -> EFLAGS(32bits) -> RFLAGS(64bits)
-https://fr.wikipedia.org/wiki/RFLAGS -> wiki des flags
+FLAGS(16bit) | EFLAGS(32bits) | RFLAGS(64bits)
+https://fr.wikipedia.org/wiki/RFLAGS | wiki des flags
 
 Il permet de fixer et de connaître l'état du processeur à tout moment grâce aux différents bits qui le composent.
 Ce registre permet ainsi d'avoir à tout instant l'état résultant d'une instruction ayant été exécutée par le processeur,
 la plupart des instructions des processeurs x86 affectant ce registre.
 
 [carryFlag] 
-CF -> drapeau arme si l'operation genere une retenue sur le bit le plus significatif
+CF | drapeau arme si l'operation genere une retenue sur le bit le plus significatif
 [zeroFlag]
-ZF-> drapeau arme si operation arithmeique vaut 0
+ZF| drapeau arme si operation arithmeique vaut 0
 [overflowFlag]
-OF -> arme si constitue un bit positif ou negatif ne pouvant tenir dans l'operand de destination
+OF | arme si constitue un bit positif ou negatif ne pouvant tenir dans l'operand de destination
 
 ------------------GDB------------------
 
