@@ -137,3 +137,11 @@ rsp + 8 ; argv**
 ;donc on obtient argv*** qui est deferencer avec l'appelle []
 mov rsi, [rsi] ; on dereference le poiteur et on passe de argv ** a argv* (ici on pointe sur argv[0])
 ```
+
+___
+
+### Docu
+
+- [Tutorial asm](https://revers.engineering/applied-reverse-engineering-series/)
+- [syscall table](https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/)
+- [Wiki des flags](https://fr.wikipedia.org/wiki/RFLAGS)
