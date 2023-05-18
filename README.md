@@ -1,10 +1,21 @@
-# ASM 64x86 BASIQUE
+<h1 align="center" >ASM 64x86 BASIQUE</h1>
+
+<h3 align="center"> Share Essential and Basique info on asm </h3>
 
 **At&T** : instruction like $0x1, %eax
 
 **Intel**: instruction eax, 0x1
 
-## Sections
+## Table of Content
+
+- [Section](#sections)
+  - [.bss Section](#.bss-section)
+  - [.data Section](#.data-section)
+  - [.text Section](#.text-section)
+    - [registre](#registre)
+
+
+<h2 align="center">Sections</h2>
 
 **.bss** = variables not initialisees : ```int a;```
 
@@ -14,7 +25,7 @@
 
 ___
 
-### .data SectFlags
+<h3 align="center">.data Section<h3>
 FLAGS(16bit) 	EFLAGS(32bits) 	RFLAGS(64bits)
 
 -> Wiki des flagsion 
@@ -35,10 +46,11 @@ _data db 'db is declare byte', 0xa, 0x0
 
 ___
 
-### .text Section
+<h3 align="center">.text Section</h3>
 
 ```section .text```
-#### Registre 
+  
+<h4 align="center">Registre</h4> 
 
 16bits | 32bits | 64bits | definition
 --- | --- | ---| ---
@@ -54,7 +66,7 @@ ip | eip | rip | instruction pointer (vers la prochaine action a executer)
 
 ___
 
-### Instruction
+<h3 align="center">Instruction</h3>
 
 usage ```Operand, Value```
 
@@ -68,13 +80,13 @@ Instruction | definition | precision
 
 ___
 
-### JMP / IF 
+<h3 align="center">JMP / IF</h3>
 
-#### Unconditionel
+<h4>Unconditionel</h4>
 
 usage ```jmp <etiquette>``` : va a l'etiquette <etiquette> et exectute le code
 
-#### Conditionel
+<h4>Conditionel</h4>
 
 instruction | == | appropriate Flags | sign
 --- | --- | --- | ---
@@ -91,7 +103,7 @@ instruction | == | appropriate Flags | sign
 
 ___
   
-### Flags
+<h3 align="center">Flags</h3>
 
 FLAGS(16bit) | EFLAGS(32bits) | RFLAGS(64bits)
 --- | --- | ---
@@ -110,7 +122,7 @@ Overflow Flag | OF | arme si constitue un bit positif ou negatif ne pouvant teni
 
 ___
   
-### GDB
+<h3 align="center">GDB</h3>
   
 Command | explication | precision 
 --- | --- | ---
@@ -118,7 +130,7 @@ Command | explication | precision
 
 ___  
 
-### Command Line
+<h3 align="center">Command Line</h3>
 
 command | expliquation | precision
 --- | --- | ---
@@ -127,7 +139,7 @@ command | expliquation | precision
 
 ___
 
-### Code Example
+<h3 align="center">Code Example</h3>
 
 - **Argument du main**
 ```asm
@@ -140,7 +152,7 @@ mov rsi, [rsi] ; on dereference le poiteur et on passe de argv ** a argv* (ici o
 
 ___
 
-### Docu
+<h3 align="center">Docu</h3>
 
 - [Tutorial asm](https://revers.engineering/applied-reverse-engineering-series/)
 - [syscall table](https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/)
