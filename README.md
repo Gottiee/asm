@@ -13,7 +13,7 @@
   - [.data Section](#data-section)
   - [.text Section](#text-section)
     - [registre](#registre)
-  - [Jmp / If](#jmp-/-if)
+  - [Jmp / If](#jmp-if)
   - [Flags](#flags)
 - [GDB](#gdb)
 - [Command Line](#command-line)
@@ -86,7 +86,7 @@ Instruction | definition | precision
 
 ___
 
-<h3 align="center">JMP / IF</h3>
+<h3 align="center">JMP IF</h3>
 
 <h4>Unconditionel</h4>
 
