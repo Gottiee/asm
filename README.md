@@ -9,9 +9,9 @@
 ## Table of Content
 
 - [Section](#sections)
-  - [bss Section](#.bss-section)
-  - [data Section](#.data-section)
-  - [text Section](#.text-section)
+  - [.bss Section](#bss-section)
+  - [.data Section](#data-section)
+  - [.text Section](#text-section)
     - [registre](#registre)
 
 
@@ -25,7 +25,7 @@
 
 ___
 
-<h3 align="center">.data Section<h3>
+<h3 align="center">data Section<h3>
 FLAGS(16bit) 	EFLAGS(32bits) 	RFLAGS(64bits)
 
 -> Wiki des flagsion 
@@ -46,7 +46,7 @@ _data db 'db is declare byte', 0xa, 0x0
 
 ___
 
-<h3 align="center">.text Section</h3>
+<h3 align="center">text Section</h3>
 
 ```section .text```
   
