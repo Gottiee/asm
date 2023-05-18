@@ -9,9 +9,9 @@
 ## Table of Content
 
 - [Section](#sections)
-  - [.bss Section](#.bss-section)
-  - [.data Section](#.data-section)
-  - [.text Section](#.text-section)
+  - [bss Section](#.bss-section)
+  - [data Section](#.data-section)
+  - [text Section](#.text-section)
     - [registre](#registre)
 
 
