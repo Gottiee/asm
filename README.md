@@ -13,6 +13,12 @@
   - [.data Section](#data-section)
   - [.text Section](#text-section)
     - [registre](#registre)
+  - [Jmp / If](#jmp-/-if)
+  - [Flags](#flags)
+- [GDB](#gdb)
+- [Command Line](#command-line)
+- [Code Exemple](#code-example)
+- [Doc](#docu)
 
 
 <h2 align="center">Sections</h2>
