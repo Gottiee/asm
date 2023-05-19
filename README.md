@@ -34,7 +34,7 @@
 
 ___
 
-<h3 align="center">bss Section<h3>
+<h3 align="center">bss Section</h3>
 
 ```section .bss```
 
@@ -53,7 +53,7 @@ resq | reserv a quad word (8 byte) | ```data resq 1``` | reserv 8 bytes
 
 ___
 
-<h3 align="center">data Section<h3>
+<h3 align="center">data Section</h3>
 
 ```section .data```
 
