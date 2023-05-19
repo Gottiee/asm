@@ -32,13 +32,10 @@
 ___
 
 <h3 align="center">data Section<h3>
-FLAGS(16bit) 	EFLAGS(32bits) 	RFLAGS(64bits)
-
--> Wiki des flagsion 
 
 ```section .data```
 
-Declare a variable:
+- Declare a variable:
 ```asm
 _data db 'db is declare byte', 0xa, 0x0 
 ```
@@ -49,6 +46,13 @@ _data db 'db is declare byte', 0xa, 0x0
 **0xa** : ecrite '\n' a la suite de la string
 
 **0x0** : ecrire '\0' a la fin de la string
+
+- Variable lenght
+```asm
+_data_len equ $-_data
+```
+
+**$-** : permet de recuperer la longeur de la chaine de caractere donnee
 
 ___
 
@@ -82,7 +86,9 @@ Instruction | definition | precision
 **db** | declare un byte
 **cmp** | compare des valeurs et set le RFLAGS
 **lea** | move effective adress | met l'adress de source dans dest
-**jmp
+**jmp** | effectue des sauts inconditionell direct | ne sauvegarde pas l'adress de retour 
+**call** | effectue sous routine / appelle de fonctions | sauvergarde l'adress de retour en la pushant sur la stack
+**dec** | decrement une valeur | usage : ```dec r12```
 
 ___
 
@@ -106,6 +112,11 @@ instruction | == | appropriate Flags | sign
 #### usage Greater?Above?
 **less/greater** == signed  ```int a;```
 **above/below** == unsigned ```unsigned int a;```
+
+___
+
+<h3 align="center">Boucle</h3>
+
 
 ___
   
