@@ -34,7 +34,7 @@
 
 ___
 
-<h3 align="center">bss Section<h3>
+<h3 align="center">bss Section</h3>
 
 ```section .bss```
 
@@ -53,7 +53,7 @@ resq | reserv a quad word (8 byte) | ```data resq 1``` | reserv 8 bytes
 
 ___
 
-<h3 align="center">data Section<h3>
+<h3 align="center">data Section</h3>
 
 ```section .data```
 
@@ -207,7 +207,7 @@ ___
 
 <h3 align="center">Code Example</h3>
 
-- **Arguments du main**
+#### Arguments du main
 
 ```asm
 lea rsi, [rsp+8] ; lea recupere l'adress de rsp + 8 qui equivaut a 
@@ -217,7 +217,7 @@ rsp + 8 ; argv**
 mov rsi, [rsi] ; on dereference le poiteur et on passe de argv ** a argv* (ici on pointe sur argv[0])
 ```
 
-- **Call instruction**
+#### Call instruction
 
 ```asm
 global _start
@@ -243,7 +243,57 @@ _exit:
     syscall
 ```
 
+  - **STEP 1**: Save rbp on the top of the stack ```push rbp && mov rbp, rsp```
+  
+```gdb
+0x00007fffffffe448│+0x0000: 0x0000000000000000	 ← $rsp, $rbp
+0x00007fffffffe450│+0x0008: 0x0000000000000001
+0x00007fffffffe458│+0x0010: 0x00007fffffffe751  →  "/home/gottie/42/asm/exec"
+0x00007fffffffe460│+0x0018: 0x0000000000000000
+```
+- **STEP 2**: then ```call fucntion``` push next instruction ($rip++) on the top of the stack
+  
+```gdb
+0x00007fffffffe440│+0x0000: 0x0000000000401009  →  <_start+9> jmp 0x401015 <_exit>	 ← $rsp
+0x00007fffffffe448│+0x0008: 0x0000000000000000	 ← $rbp
+0x00007fffffffe450│+0x0010: 0x0000000000000001
+0x00007fffffffe458│+0x0018: 0x00007fffffffe751  →  "/home/gottie/42/asm/exec"
+```
+- **STEP 3**: save rbp and update it ```push rbp && mov rbp, rsp```
+  
+```gdb
+0x00007fffffffe438│+0x0000: 0x00007fffffffe448  →  0x0000000000000000	 ← $rsp, $rbp
+0x00007fffffffe440│+0x0008: 0x0000000000401009  →  <_start+9> jmp 0x401015 <_exit>
+0x00007fffffffe448│+0x0010: 0x0000000000000000
+0x00007fffffffe450│+0x0018: 0x0000000000000001
+0x00007fffffffe458│+0x0020: 0x00007fffffffe751  →  "/home/gottie/42/asm/exec"
+```
 
+- **STEP 4**: update $rps to push some things to the top of the stack
+  
+```gdb
+0x00007fffffffe428│+0x0000: 0x0000000000000000	 ← $rsp
+0x00007fffffffe430│+0x0008: 0x0000000000000000
+0x00007fffffffe438│+0x0010: 0x00007fffffffe448  →  0x0000000000000000	 ← $rbp
+0x00007fffffffe440│+0x0018: 0x0000000000401009  →  <_start+9> jmp 0x401015 <_exit>
+0x00007fffffffe448│+0x0020: 0x0000000000000000
+0x00007fffffffe450│+0x0028: 0x0000000000000001
+0x00007fffffffe458│+0x0030: 0x00007fffffffe751  →  "/home/gottie/42/asm/exec"
+```  
+
+- **STEP 5**: when the ```leave``` instruction is call, it update $rsp to $rbp so the top of the stack egual ``` 0x00007fffffffe438│+0x0010: 0x00007fffffffe448  →  0x0000000000000000	 ← $rbp```
+- ```leave``` call ```pop rbp``` to reupdate rbp to it previous value we did push on parent function (here 0 cause _start fonction pushed $rbp == 0).
+  
+```gdb 
+0x00007fffffffe440│+0x0000: 0x0000000000401009  →  <_start+9> jmp 0x401015 <_exit>	 ← $rsp
+0x00007fffffffe448│+0x0008: 0x0000000000000000	 ← $rbp
+0x00007fffffffe450│+0x0010: 0x0000000000000001
+0x00007fffffffe458│+0x0018: 0x00007fffffffe751  →  "/home/gottie/42/asm/exec"
+```
+  
+- **STEP 6**: Remember we did save next address instruction on the step 2, so ```ret``` instruction will update rip (instructions pointer) by ```pop rip``` et ```jump rip```
+- We're back to _start function !!
+  
 ___
 
 <h3 align="center">Docu</h3>
