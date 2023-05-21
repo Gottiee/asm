@@ -1,2 +1,5 @@
 *.o
 exec
+libasm.a
+test
+/obj
