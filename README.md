@@ -111,20 +111,19 @@ r15w | r15d | r15
 ___
 <h4 align="center">Strings</h4>
 
-> Instruction on string will check RFlag DC to increment or decrement string [check here](#flags).
+Instruction on string will check RFlag DC to increment or decrement string [check here](#flags).
 
 instruction | effect | value Flag DC
 --- | --- | ---
 std | instruction on string will decrement | set DC => 1
 cld | instrution on sring will increment | set DC => 0
 
->lenght are respectively : b for byte, w for word, d for double word and q for quad word.
-
 instruction | length ? | utility | exemple
 --- | --- | --- | ---
 lods"$length" | b/w/d/q | load lenght Bytes from [RSI] in RAX and inc / dec RSI | lodsb ; al, byte ptr [rsi] && inc rsi
 stos"$lenght" | b/w/d/q | copy lenght Bytes from RAX in [RDI] and inc / dec RDI | stosb ; byte ptr [rdi], al && inc rdi
 movs"$lenght" | b/w/d/q | copy lenght Bytes from [RSI] in [RDI] and inc / dec both | movsb ; byte ptr [rdi], byte ptr [rsi] && inc rdi && icn rsi
+>lenght are respectively : b for byte, w for word, d for double word and q for quad word.
 
 ___
 
