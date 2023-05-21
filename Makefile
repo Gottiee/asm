@@ -10,7 +10,7 @@ SRCS = src/ft_strlen.s \
 OBJS = $(SRCS:src/%.s=obj/%.o)
 
 NASM = nasm
-NASM_FLAGS = -f macho64
+NASM_FLAGS = -f elf64
 TEST=test
 
 all: $(NAME)
