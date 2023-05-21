@@ -10,18 +10,18 @@ SRCS = src/ft_strlen.s \
 OBJS = $(SRCS:src/%.s=obj/%.o)
 
 NASM = nasm
-NASM_FLAGS = -f elf64
+NASM_FLAGS = -f macho64
 TEST=test
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rc $(NAME) $(OBJS)
-	@ranlib $(NAME)
+	ar rc $(NAME) $(OBJS)
+	ranlib $(NAME)
 
 obj/%.o: src/%.s
-	@mkdir -p obj
-	@$(NASM) $(NASM_FLAGS) $< -o $@
+	mkdir -p obj
+	$(NASM) $(NASM_FLAGS) $< -o $@
 
 clean:
 	@/bin/rm -f $(OBJS)
