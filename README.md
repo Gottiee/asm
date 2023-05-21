@@ -13,6 +13,7 @@
   - [.data Section](#data-section)
   - [.text Section](#text-section)
     - [registre](#registre)
+    - [strings](#strings)
   - [Jmp / If](#jmp-if)
   - [Syscall](#syscall)
   - [Flags](#flags)
@@ -108,6 +109,24 @@ r14w | r14d | r14
 r15w | r15d | r15
 
 ___
+<h4 align="center">Strings</h4>
+
+> Instruction on string will check RFlag DC to increment or decrement string [check here](#flags).
+
+instruction | effect | value Flag DC
+--- | --- | ---
+std | instruction on string will decrement | set DC => 1
+cld | instrution on sring will increment | set DC => 0
+
+>lenght are respectively : b for byte, w for word, d for double word and q for quad word.
+
+instruction | length ? | utility | exemple
+--- | --- | --- | ---
+lods"$length" | b/w/d/q | load lenght Bytes from [RSI] in RAX and inc / dec RSI | lodsb ; al, byte ptr [rsi] && inc rsi
+stos"$lenght" | b/w/d/q | copy lenght Bytes from RAX in [RDI] and inc / dec RDI | stosb ; byte ptr [rdi], al && inc rdi
+movs"$lenght" | b/w/d/q | copy lenght Bytes from [RSI] in [RDI] and inc / dec both | movsb ; byte ptr [rdi], byte ptr [rsi] && inc rdi && icn rsi
+
+___
 
 <h3 align="center">Instruction</h3>
 
@@ -185,6 +204,7 @@ Flags | abreviation | explication
 Carry Flag | CF | drapeau arme si l'operation genere une retenue sur le bit le plus significatif
 Zero Flag | ZF| drapeau arme si operation arithmeique vaut 0
 Overflow Flag | OF | arme si constitue un bit positif ou negatif ne pouvant tenir dans l'operand de destination
+Direction Flag | DF | pour les instructions utilisant ce Flag : 0 => operation on string are inc || 1 => operation on string are dec
 
 ___
   
