@@ -118,6 +118,8 @@ instruction | effect | value Flag DC
 std | instruction on string will decrement | set DC => 1
 cld | instrution on sring will increment | set DC => 0
 
+Instruction do deal with string :
+
 instruction | length ? | utility | exemple
 --- | --- | --- | ---
 lods"$length" | b/w/d/q | load lenght Bytes from [RSI] in RAX and inc / dec RSI | lodsb ; al, byte ptr [rsi] && inc rsi
