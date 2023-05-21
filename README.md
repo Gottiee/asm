@@ -111,12 +111,12 @@ r15w | r15d | r15
 ___
 <h4 align="center">Strings</h4>
 
-Instruction on string will check RFlag DC to increment or decrement string [check here](#flags).
+Instruction on string will check RFlag DF to increment or decrement string [check here](#flags).
 
-instruction | effect | value Flag DC
+instruction | effect | value Flag DF
 --- | --- | ---
-std | instruction on string will decrement | set DC => 1
-cld | instrution on sring will increment | set DC => 0
+std | instruction on string will decrement | set DF => 1
+cld | instrution on sring will increment | set DF => 0
 
 Instruction do deal with string :
 
