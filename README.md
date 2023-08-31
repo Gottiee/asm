@@ -1,4 +1,4 @@
-<h1 align="center" >ASM 64x86 BASIQUE</h1>
+<h1 align="center" >ASM x64 x86 BASIQUE</h1>
 
 <h3 align="center"> Share Essential and Basique info on asm </h3>
 
@@ -320,5 +320,6 @@ ___
 <h3 align="center">Docu</h3>
 
 - [Tutorial asm](https://revers.engineering/applied-reverse-engineering-series/)
-- [syscall table](https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/)
+- [syscall table 64 bit](https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/)
+- [syscall table 32 bit](https://faculty.nps.edu/cseagle/assemblym/sys_call.html)
 - [Wiki des flags](https://fr.wikipedia.org/wiki/RFLAGS)
