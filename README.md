@@ -321,5 +321,5 @@ ___
 
 - [Tutorial asm](https://revers.engineering/applied-reverse-engineering-series/)
 - [syscall table 64 bit](https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/)
-- [syscall table 32 bit](https://faculty.nps.edu/cseagle/assemblym/sys_call.html)
+- [syscall table 32 bit](https://faculty.nps.edu/cseagle/assembly/sys_call.html)
 - [Wiki des flags](https://fr.wikipedia.org/wiki/RFLAGS)
